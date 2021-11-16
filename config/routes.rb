@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # get 'questions/new'
   # get 'questions/edit'
   
+  # rootの設定
+  root 'questions#index'
   # resourcesを使用したルーティングの設定
   resources :puestions
   
