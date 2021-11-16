@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # rootの設定
   root 'questions#index'
   # resourcesを使用したルーティングの設定
-  resources :puestions
+  resources :questions
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
