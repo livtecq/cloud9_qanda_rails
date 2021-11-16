@@ -11,6 +11,14 @@
 
   <body>
     <div class="container">
+       <!--バリデーション/エラーメッセージの表示 -->
+      <% if flash[:notice] %>
+        <p class="text-success"><%= flash[:notice] %></p>
+      <% end %>
+      <% if flash[:alert] %>
+        <p class="text-danger"><%= flash[:alert] %></p>
+      <% end %>
+      
     <%= yield %>
     </div>
   </body>
