@@ -12,7 +12,22 @@ class QuestionsController < ApplicationController
     # new.html.erbのViewのform_withで使用する。
     @question = Question.new
   end
+  
+  def create
+    @question = Question.new(question_params)
+    if @question.save
+      redirect_to root_path, notice: 'Success!'
+    else
+      flash[:alert] = 'Save error!'
+    end
+  end
 
   def edit
   end
+  
+  private
+    def question_params
+    params.require(:question).permit(:name, :title, :content)
+    end
+  
 end
